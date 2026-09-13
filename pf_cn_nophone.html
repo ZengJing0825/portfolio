@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>Jing · AI 作品集</title><style>
+@page{size:A4;margin:40pt 46pt 34pt 46pt} *{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Helvetica","PingFang SC",sans-serif;color:#111;font-size:9.2pt;line-height:14pt}
+.top{border-top:2.6pt solid #4390b2;padding-top:14pt;display:flex;align-items:baseline;justify-content:space-between}
+.sqs span{display:inline-block;width:12pt;height:12pt;margin-right:2pt} .s1{background:#fdc700} .s2{background:#ff4013} .s3{background:#00b2e1}
+h1{font-family:"BoldMix","PingFang SC",sans-serif;font-size:17pt;color:#1f4e66;font-weight:normal;letter-spacing:0.2pt} .contact{color:#737373;font-size:8.2pt;font-family:Arial,sans-serif;text-align:right;line-height:12pt} .contact a{color:#4390b2;text-decoration:none}
+.thesis{margin:9pt 0 9pt;font-size:10pt;line-height:15pt;color:#222}
+.flow{font-size:8.6pt;margin-bottom:14pt;padding-bottom:11pt;border-bottom:0.6pt solid #d9e3ea;display:flex;align-items:center;flex-wrap:wrap;row-gap:4pt} .step{display:inline-block;background:#eef4f8;color:#1f4e66;border-radius:2pt;padding:2pt 6pt;white-space:nowrap} .arr{color:#9db4c2;margin:0 4pt} .loop{color:#737373;margin-left:10pt;font-size:8pt}
+.stn{display:inline-block;font-family:Arial;font-size:7.4pt;color:#4390b2;margin-right:3pt}
+.grid{display:grid;grid-template-columns:1fr 1fr;column-gap:26pt;row-gap:14pt}
+.item{display:flex;gap:9pt;break-inside:avoid}
+.num{font-family:Arial,sans-serif;font-size:22pt;line-height:22pt;color:#c9d9e3;flex:0 0 18pt;text-align:right;margin-top:-2pt}
+.body{flex:1}
+h3{font-size:10.2pt;color:#1f4e66;margin-bottom:3pt;line-height:13.5pt}
+.os{white-space:nowrap;margin-left:6pt;color:#4390b2;font-size:7.4pt;font-family:"Helvetica","PingFang SC",sans-serif;letter-spacing:0.2pt}
+p.bg{color:#737373;margin-bottom:3pt}
+p.how{padding-left:9pt;text-indent:-9pt} p.how::before{content:"–";color:#4390b2;display:inline-block;width:9pt;text-indent:0}
+p.res{margin-top:4pt;color:#1f4e66}
+.foot{margin-top:16pt;color:#737373;font-size:7.8pt;border-top:0.6pt solid #d9e3ea;padding-top:6pt}
+@font-face{font-family:"BoldMix";src:local("HelveticaNeue-Medium");unicode-range:U+0000-024F} @font-face{font-family:"BoldMix";src:local("PingFangSC-Semibold");unicode-range:U+2E80-FFFF}
+h3{font-family:"BoldMix","PingFang SC",sans-serif;font-weight:normal}
+</style></head><body>
+<div class="top"><h1>Jing · AI 作品集</h1><div class="contact">monicazengjing@gmail.com · <a href="https://github.com/ZengJing0825">github.com/ZengJing0825</a></div></div>
+<div class="thesis">一个 AI 投研 agent 产品，从定义输出到拉来用户的六步我都亲手做过，每步有代码或规则可查。</div><div class="flow"><span class="step"><span class="stn">1</span>定义输出</span><span class="arr">→</span><span class="step"><span class="stn">2</span>做成 agent</span><span class="arr">→</span><span class="step"><span class="stn">3</span>评好坏</span><span class="arr">→</span><span class="step"><span class="stn">4</span>推给用户</span><span class="arr">→</span><span class="step"><span class="stn">5</span>守住质量</span><span class="arr">→</span><span class="step"><span class="stn">6</span>拉来用户并归因</span><span class="loop">↻ 第 6 步的数据回到第 1 步，改输出</span></div>
+<div class="grid"><section class="item"><div class="num">1</div><div class="body"><h3>定义输出：agent 该说什么、不说什么</h3>
+<p class="bg">不定输出形态，就会满屏旁白、同一标的反复出现、结论看不到。</p><p class="how">五套输出模板：digest、screener、thesis、what-if、earnings</p><p class="how">三条规则：首屏只放结论；一页只回答一个问题；digest 是推送不是看板</p><p class="how">三道 grounding 闸门和冻结的 feed 契约写进模板，规则可机械检查</p><p class="res">4 套 11,403 行进入团队模板库；公开仓库 3 个 PR，2 个当日合并</p></div></section><section class="item"><div class="num">2</div><div class="body"><h3>做成 agent：让规则每天自动跑</h3>
+<p class="bg">持仓和自选每天信息过载，用户只想知道今天有没有事、意味着什么。</p><p class="how">按事件排序，不按标的；标的异动却没有自身新闻，反向查同行和板块</p><p class="how">每条带「意味着什么、盯什么」的决策透镜</p><p class="how">持仓手填、截图、券商直连三种接入；两天内复用引擎做出自选股姊妹版</p><p class="res">约 1.4 万行自动化脚本，5 篇设计文档：portfolio-watch、watchlist-watch</p></div></section><section class="item"><div class="num">3</div><div class="body"><h3>评好坏：发版前知道是好是坏<span class="os">已开源</span></h3>
+<p class="bg">改一版 prompt 好坏全靠人感觉，发版没有回归清单。</p><p class="how">先把题和答案做对再评 agent：owner 写答案，peer 复核</p><p class="how">四层题集各设目标；裁判带版本，人工抽检校准</p><p class="how">坏例先归因（数据、工具、口径、推理、裁判）再回流题集</p><p class="res">题集 30 到 100 道；首轮 27 题过 5，三个月后稳定 0.9 以上；145 个测试：agent-eval-harness</p></div></section><section class="item"><div class="num">4</div><div class="body"><h3>推给用户：没事闭嘴，有事说人话<span class="os">已开源</span></h3>
+<p class="bg">推送滞后没价值，推送太密被静音。</p><p class="how">无事不推；同主题只在恶化时重推</p><p class="how">一套信号按标的、按人、按持仓三种切片；有仓位按权重乘波动排</p><p class="how">候选审批后发布，每次运行留审计记录</p><p class="res">原型某天 16 推 3 静默、同小时重复提醒，加最小间隔后修正；61 个测试：ticker-digest</p></div></section><section class="item"><div class="num">5</div><div class="body"><h3>守住质量：坏内容和坏数据别上首页</h3>
+<p class="bg">用户生成内容涌入后，首页质量靠人盯不住。</p><p class="how">评分规则：门槛先行，通用加技能维度，一个缺陷只在一个维度扣分，分档</p><p class="how">每小时巡检首页内容，10 层检测区分「空」和「坏」，基线加告警</p><p class="res">44 个内容评审，19 个入选，均分 70.1：评分规则、策展流程、巡检脚本</p></div></section><section class="item"><div class="num">6</div><div class="body"><h3>拉来用户并归因：每一块投放钱追到动作<span class="os">已开源</span></h3>
+<p class="bg">花了钱不知道用户去哪，用错误的转化目标训练广告算法。</p><p class="how">先埋点再投放；GA4 和自有库对账</p><p class="how">按承接页类型拆看，不看总数</p><p class="how">每个改动走诊断、假设、小预算、对照、关停或加量</p><p class="res">三个月内注册成本降到起点的三分之一，场景聚合页最便宜也最稳，点击率约为 PMax 两倍：ga4-ads-dashboard</p></div></section></div><div class="foot">数字均为本人原始记录。标「已开源」的三项在 github.com/ZengJing0825，其余可面试演示。</div></body></html>
