@@ -31,6 +31,6 @@
 
 ---
 
-一页版作品集（PDF，不含联系方式）：[中文](作品集_Jing_cn.pdf) · [English](Portfolio_Jing_en.pdf)
+一页版作品集 PDF：[中文](作品集_Jing_cn.pdf) · [English](Portfolio_Jing_en.pdf)
 
 三个仓库都能离线跑，示例数据全部合成，中文说明见各仓库的 `README.zh.md`。
